@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM API for HTML modification</title>
+</head>
+<body style="background-color:lightblue;text-align:center">
+    <h1 id="hdr1">Here's your ice cream</h1>
+    <img id="img1" src="C:\Users\shiva\OneDrive\Documents\html\images\full-cone.png" style="height: 400px;" alt="Ice cream is not ready">
+    <p id="p1" onclick="eat()" style="cursor: pointer;">Click here to eat</p>
+
+    <script>
+        let isFullCone = true;
+        function eat(){
+            const header = document.getElementById('hdr1');
+            const image = document.getElementById('img1');
+            const para = document.getElementById('p1');
+            const body = document.body;
+
+            if(isFullCone){
+                header.innertext = "Hope you liked it!";
+                image.src = "C:/Users/shiva/OneDrive/Documents/html/images/empty-cone.png";
+                para.innerText = "Click to Re-fill!";
+                body.style.backgroundColor = "rgb(127,255,144)";
+            }
+            else{
+                header.innerText = "Here's a re-filled cone!";
+                image.src = "C:/Users/shiva/OneDrive/Documents/html/images/full-cone.png";
+                image.style.height = "400px";
+                para.innerText = "Enjoy yourself!";
+                body.style.backgroundColor = "rgb(255, 179, 255)";
+            }
+
+            isFullCone = !isFullCone;
+
+        }
+    </script>
+</body>
+</html>
